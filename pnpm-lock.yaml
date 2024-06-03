@@ -30,6 +30,9 @@ importers:
       prettier-plugin-tailwindcss:
         specifier: ^0.6.1
         version: 0.6.1(prettier-plugin-astro@0.14.0)(prettier@3.3.0)
+      typescript:
+        specifier: ^5.4.5
+        version: 5.4.5
 
 packages:
 
