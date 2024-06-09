@@ -5,6 +5,7 @@
 @layer base {
   @font-face {
     font-family: "Akira Expanded";
-    src: url("/fonts/Akira Expanded/Akira Bold.ttf") format("truetype");
+    src: url("/iacademy-socw/fonts/Akira Expanded/Akira Bold.ttf")
+      format("truetype");
   }
 }
