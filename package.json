@@ -17,16 +17,16 @@
     "@fontsource-variable/source-code-pro": "^5.0.19",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.9.2",
+    "astro": "^4.10.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-timer-hook": "^3.0.7",
-    "tailwindcss": "^3.4.3"
+    "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
-    "prettier": "^3.3.0",
+    "prettier": "^3.3.1",
     "prettier-plugin-astro": "^0.14.0",
-    "prettier-plugin-tailwindcss": "^0.6.1",
+    "prettier-plugin-tailwindcss": "^0.6.2",
     "typescript": "^5.4.5"
   }
 }
