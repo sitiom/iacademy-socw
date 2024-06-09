@@ -5,8 +5,6 @@ import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://sitiom.github.io",
-  base: "iacademy-socw",
   integrations: [tailwind({
     applyBaseStyles: false
   }), react()]
