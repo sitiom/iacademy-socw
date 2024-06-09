@@ -1,5 +1,7 @@
 # iACADEMY SOC Week '23-'24
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/1722e841-cb24-4a6d-92b6-30c3dfc7c9d0/deploy-status)](https://app.netlify.com/sites/iacademy-socw/deploys)
+
 <p align="center">
 <img src="./public/images/logo.png" alt="logo" width="120" height="120" />
 
