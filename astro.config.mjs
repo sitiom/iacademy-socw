@@ -6,5 +6,5 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   site: "https://sitiom.github.io",
   base: "iacademy-socw",
-  integrations: [tailwind()]
+  integrations: [tailwind({ applyBaseStyles: false, })]
 });

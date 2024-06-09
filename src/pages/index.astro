@@ -1,21 +1,27 @@
 ---
+import { Image } from "astro:assets";
+import "@fontsource-variable/source-code-pro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Card from "../components/Card.astro";
+import heroLogo from "../images/hero-logo.png";
 ---
 
 <BaseLayout
   description="Meta description. Here goes your page description. Provide a clear and concise summary of the content."
 >
-  <Card
-    name="SOC Week"
-    position="'23-'24"
-    aboutMe={`The long wait is over!\n
-      🚀𝐀 𝐒𝐩𝐚𝐜𝐞 𝐂𝐨𝐝𝐞𝐬𝐬𝐲🚀\n
-      SOC Week is officially live starting today!\n
-      Witness the grand celebration of our School of Computing department through this week’s fun-filled events and activities!\n
-      Still haven’t joined? Make sure to fill out our registration form! It is never too late!`}
-    linkedin="https://www.linkedin.com/in/#"
-    github="https://github.com/sitiom"
-    profileImage="/iacademy-socw/images/logo.png"
-  />
+  <div class="flex justify-center">
+    <section
+      class="container flex flex-col items-center justify-center gap-4 px-6 py-14 md:flex-row md:gap-0"
+    >
+      <div class="text-center md:w-[40rem] md:text-left">
+        <h1 class="font-['Source_Code_Pro_Variable']">
+          &lt;<span class="text-[#04FEE1]">SCHOOL OF COMPUTING WEEK</span>
+          <span class="text-[#CD81FF]">2024</span>/&gt;
+        </h1>
+        <p class="font-['Akira_Expanded'] text-xl sm:text-2xl md:text-5xl">
+          The Future of Computing through Game-Changing Innovations
+        </p>
+      </div>
+      <Image src={heroLogo} alt="School of Computing Week 2024" width={350} />
+    </section>
+  </div>
 </BaseLayout>
