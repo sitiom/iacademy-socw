@@ -3,8 +3,8 @@ import { useTimer } from "react-timer-hook";
 const Cell = ({ value, label }: { value: number; label: string }) => (
   <div className="flex flex-col items-center gap-4">
     <div className="flex gap-4">
-      <div className="w-16 rounded-lg bg-slate-800 bg-gradient-to-t from-transparent to-slate-900 px-4 py-5 text-center opacity-90 md:w-28 md:px-5 md:py-8">
-        <p className="text-3xl md:text-6xl">{value}</p>
+      <div className="rounded-lg bg-slate-800 bg-gradient-to-t from-transparent to-slate-900 py-5 text-center opacity-90 ~sm:~w-16/28 ~sm:~px-4/5">
+        <p className="~sm:~text-3xl/6xl">{value}</p>
       </div>
     </div>
     <p className="font-trap text-xs">{label}</p>

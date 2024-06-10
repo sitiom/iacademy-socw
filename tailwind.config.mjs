@@ -1,9 +1,14 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
+import fluid, { extract, screens } from 'fluid-tailwind'
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+  content: {
+    files: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    extract
+  },
   theme: {
+    screens,
     extend: {
       fontFamily: {
         sans: ['Inter Variable', ...defaultTheme.fontFamily.sans],
@@ -11,5 +16,5 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [fluid],
 }

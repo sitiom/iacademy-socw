@@ -11,18 +11,24 @@ import Countdown from "../components/Countdown";
 >
   <div class="flex flex-col items-center">
     <section
-      class="container flex flex-col items-center justify-center gap-4 px-6 py-14 md:flex-row md:gap-0"
+      class="container flex flex-col items-center justify-center gap-4 px-6 py-14 md:flex-row md:gap-0 lg:max-w-[60rem]"
     >
-      <div class="text-center md:w-[40rem] md:text-left">
+      <div class="text-center md:w-auto md:text-left">
         <h1 class="font-mono">
           &lt;<span class="text-[#04FEE1]">SOCWeek</span>
           <span class="text-[#CD81FF]">2024</span>/&gt;
         </h1>
-        <p class="font-['Akira_Expanded'] text-xl sm:text-2xl md:text-5xl">
+        <p
+          class="text-pretty font-['Akira_Expanded'] leading-none ~text-2xl/5xl"
+        >
           The Future of Computing through Game-Changing Innovations
         </p>
       </div>
-      <Image src={heroLogo} alt="School of Computing Week 2024" width={350} />
+      <Image
+        src={heroLogo}
+        alt="School of Computing Week 2024"
+        class="~md:~w-52/80"
+      />
     </section>
     <Countdown client:only="react" />
   </div>
