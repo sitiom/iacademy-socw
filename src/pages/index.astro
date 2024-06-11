@@ -4,6 +4,7 @@ import "@fontsource-variable/source-code-pro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import heroLogo from "../images/hero-logo.png";
+import timelineDiagram from "../images/timeline-diagram.png";
 import aboutImg from "../images/about.jpg";
 import Countdown from "../components/Countdown";
 ---
@@ -72,5 +73,8 @@ import Countdown from "../components/Countdown";
         </div>
       </div>
     </div>
+  </Section>
+  <Section title="Timeline" id="timeline">
+    <Image src={timelineDiagram} alt="Timeline diagram" class="mx-auto" />
   </Section>
 </BaseLayout>
