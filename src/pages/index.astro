@@ -37,21 +37,25 @@ import Countdown from "../components/Countdown";
   <section class="container mx-auto px-6 py-14 font-mono">
     <div class="mb-10">
       <div>&lt;h2&gt</div>
-      <h2 class="text-5xl font-extrabold uppercase">About</h2>
-      <div>&lt;h2/&gt;</div>
+      <h2 class="text-5xl font-extrabold uppercase" id="about">About</h2>
+      <div>&lt;/h2&gt;</div>
     </div>
     <div class="flex flex-col items-center justify-center gap-6 lg:flex-row">
       <Image src={aboutImg} alt="About" class="flex-1 object-cover lg:w-1/2" />
       <div class="flex-1">
-        <div>&lt;<span class="text-[#04FEE1]">SOCW2024:Expo</span>&gt;</div>
-        <div class="py-3">
+        <div>
+          &lt;<span class="text-[#17F1FF]"
+            ><span class="font-bold">SOCW2024</span>:Expo</span
+          >&gt;
+        </div>
+        <div class="flex flex-col gap-4 py-3">
           <p>
-            SOCW2024:Expo serves as a venue for both students and industry
-            professionals in the computing field to delve deeper into the recent
-            developments, uncover innovation and spot potential opportunities.
-            This event showcases the profound potential of what the tech
-            industry can do in the hands of iACADEMY students and industry
-            professionals in the forms of:
+            <span class="font-bold">SOCW2024</span>:Expo serves as a venue for
+            both students and industry professionals in the computing field to
+            delve deeper into the recent developments, uncover innovation and
+            spot potential opportunities. This event showcases the profound
+            potential of what the tech industry can do in the hands of iACADEMY
+            students and industry professionals in the forms of:
           </p>
           <ul class="list-disc px-9">
             <li>Seminars about AR/VR, Cybersecurity, AI, and IoT</li>
@@ -59,13 +63,17 @@ import Countdown from "../components/Countdown";
             <li>Showcase of Indie Games created by iACADEMY students</li>
           </ul>
           <p>
-            SOCW2024:Expo will go beyond what’s required and provide exciting
-            activities that promote the collaboration of the minds and passion
-            for technology with Valorant and League of Legends tournaments and
-            many more!
+            <span class="font-bold">SOCW2024</span>:Expo will go beyond what’s
+            required and provide exciting activities that promote the
+            collaboration of the minds and passion for technology with Valorant
+            and League of Legends tournaments and many more!
           </p>
         </div>
-        <div>&lt;<span class="text-[#04FEE1]">SOCW2024:Expo</span>/&gt;</div>
+        <div>
+          &lt;/<span class="text-[#17F1FF]"
+            ><span class="font-bold">SOCW2024</span>:Expo</span
+          >&gt;
+        </div>
       </div>
     </div>
   </section>
