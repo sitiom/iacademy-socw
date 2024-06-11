@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import "@fontsource-variable/source-code-pro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import heroLogo from "../images/hero-logo.png";
+import aboutImg from "../images/about.jpg";
 import Countdown from "../components/Countdown";
 ---
 
@@ -23,6 +24,7 @@ import Countdown from "../components/Countdown";
         >
           The Future of Computing through Game-Changing Innovations
         </p>
+        <p class="font-mono text-xl">6.24.24 → 6.29.24</p>
       </div>
       <Image
         src={heroLogo}
@@ -32,4 +34,47 @@ import Countdown from "../components/Countdown";
     </section>
     <Countdown client:only="react" />
   </div>
+  <section class="container mx-auto px-6 py-14 font-mono">
+    <div class="mb-10">
+      <div>&lt;h2&gt</div>
+      <h2 class="text-5xl font-extrabold uppercase" id="about">About</h2>
+      <div>&lt;/h2&gt;</div>
+    </div>
+    <div class="flex flex-col items-center justify-center gap-6 lg:flex-row">
+      <Image src={aboutImg} alt="About" class="flex-1 object-cover lg:w-1/2" />
+      <div class="flex-1">
+        <div>
+          &lt;<span class="text-[#17F1FF]"
+            ><span class="font-bold">SOCW2024</span>:Expo</span
+          >&gt;
+        </div>
+        <div class="flex flex-col gap-4 py-3">
+          <p>
+            <span class="font-bold">SOCW2024</span>:Expo serves as a venue for
+            both students and industry professionals in the computing field to
+            delve deeper into the recent developments, uncover innovation and
+            spot potential opportunities. This event showcases the profound
+            potential of what the tech industry can do in the hands of iACADEMY
+            students and industry professionals in the forms of:
+          </p>
+          <ul class="list-disc px-9">
+            <li>Seminars about AR/VR, Cybersecurity, AI, and IoT</li>
+            <li>PC DIY Seminar hosted by ASUS</li>
+            <li>Showcase of Indie Games created by iACADEMY students</li>
+          </ul>
+          <p>
+            <span class="font-bold">SOCW2024</span>:Expo will go beyond what’s
+            required and provide exciting activities that promote the
+            collaboration of the minds and passion for technology with Valorant
+            and League of Legends tournaments and many more!
+          </p>
+        </div>
+        <div>
+          &lt;/<span class="text-[#17F1FF]"
+            ><span class="font-bold">SOCW2024</span>:Expo</span
+          >&gt;
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>
