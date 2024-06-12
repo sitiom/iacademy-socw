@@ -8,6 +8,8 @@ import timelineDiagram from "../images/timeline-diagram.png";
 import aboutImg from "../images/about.jpg";
 import Countdown from "../components/Countdown";
 import timeline from "../data/timeline";
+import compileLogo from "../images/compile-logo.png";
+import iacLogo from "../images/iac_makati-logo.png";
 ---
 
 <BaseLayout
@@ -15,7 +17,7 @@ import timeline from "../data/timeline";
 >
   <div class="flex flex-col items-center">
     <section
-      class="container flex flex-col items-center justify-center gap-4 px-6 py-14 md:flex-row md:gap-0 lg:max-w-[60rem]"
+      class="container flex flex-col items-center justify-center gap-4 px-6 pt-14 md:flex-row md:gap-0 lg:max-w-[60rem]"
     >
       <div class="text-center md:w-auto md:text-left">
         <h1 class="font-mono">
@@ -27,7 +29,6 @@ import timeline from "../data/timeline";
         >
           The Future of Computing through Game-Changing Innovations
         </p>
-        <p class="font-mono text-xl">6.24.24 → 6.29.24</p>
       </div>
       <Image
         src={heroLogo}
@@ -35,7 +36,36 @@ import timeline from "../data/timeline";
         class="~md:~w-52/80"
       />
     </section>
-    <Countdown client:only="react" />
+    <div class="my-4">
+      <p class="mb-3 text-center font-mono ~text-lg/2xl">June 24-29, 2024</p>
+      <Countdown client:only="react" />
+    </div>
+    <div
+      class="flex justify-center gap-8 px-6 py-9 text-center font-semibold md:gap-20"
+    >
+      <div>
+        <p class="~mb-1/0">Presented by</p>
+        <a
+          href="https://iacademy.edu.ph/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative after:absolute after:-left-1/2 after:h-1 after:w-0 after:rounded-xl after:bg-white after:duration-300 after:content-[''] hover:after:w-full"
+        >
+          <Image src={iacLogo} alt="iACADEMY" class="~w-32/48" />
+        </a>
+      </div>
+      <div>
+        <p class="~mb-1/0">Organized by</p>
+        <a
+          href="https://www.facebook.com/iacademycompile"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="relative after:absolute after:-left-1/2 after:h-1 after:w-0 after:rounded-xl after:bg-white after:duration-300 after:content-[''] hover:after:w-full"
+        >
+          <Image src={compileLogo} alt="Compile" class="~w-32/48" />
+        </a>
+      </div>
+    </div>
   </div>
   <Section title="About" id="about">
     <div class="flex flex-col items-center justify-center gap-6 lg:flex-row">
