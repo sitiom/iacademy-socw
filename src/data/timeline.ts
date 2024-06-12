@@ -1,4 +1,4 @@
-import type { Timeline, TimelineDay } from "../types/timeline";
+import type { Timeline } from "../types/timeline";
 
 // https://tailwindcss.com/docs/content-configuration#dynamic-class-names
 const _ = {

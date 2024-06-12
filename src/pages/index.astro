@@ -77,7 +77,9 @@ import timeline from "../data/timeline";
   </Section>
   <Section title="Timeline" id="timeline">
     <Image src={timelineDiagram} alt="Timeline diagram" class="mx-auto my-20" />
-    <ul class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
+    <ul
+      class="mx-auto grid w-fit grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4"
+    >
       {
         timeline.map((day) => (
           <li>
