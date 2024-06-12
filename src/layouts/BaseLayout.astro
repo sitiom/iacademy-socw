@@ -7,6 +7,7 @@ interface Props {
 const { title = "SOC Week '23-'24", description } = Astro.props;
 
 import "../styles/base.css";
+import AnimatedCursor from "react-animated-cursor";
 ---
 
 <html lang="en">
@@ -45,5 +46,21 @@ import "../styles/base.css";
   </head>
   <body class="bg-[#020213] text-white">
     <slot />
+    <AnimatedCursor
+      client:only="react"
+      color="255,255,255"
+      innerSize={8}
+      outerSize={35}
+      innerScale={1}
+      outerScale={2}
+      outerAlpha={1}
+      outerStyle={{
+        mixBlendMode: "exclusion",
+      }}
+      innerStyle={{
+        backgroundColor: "white",
+        mixBlendMode: "exclusion",
+      }}
+    />
   </body>
 </html>
