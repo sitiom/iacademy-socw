@@ -4,8 +4,10 @@ import "@fontsource-variable/source-code-pro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import heroLogo from "../images/hero-logo.png";
+import timelineDiagram from "../images/timeline-diagram.png";
 import aboutImg from "../images/about.jpg";
 import Countdown from "../components/Countdown";
+import timeline from "../data/timeline";
 ---
 
 <BaseLayout
@@ -72,5 +74,48 @@ import Countdown from "../components/Countdown";
         </div>
       </div>
     </div>
+  </Section>
+  <Section title="Timeline" id="timeline">
+    <Image src={timelineDiagram} alt="Timeline diagram" class="mx-auto my-20" />
+    <ul class="grid grid-cols-1 gap-14 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
+      {
+        timeline.map((day) => (
+          <li>
+            <h3 class={`text-8xl font-black text-[${day.color}]`}>{day.day}</h3>
+            <h4
+              class={`mb-6 text-2xl font-black uppercase [${day.color}] underline text-[${day.color}] [text-shadow:0_0_10px_${day.color},0_0_20px_${day.color}]`}
+            >
+              {day.title}
+            </h4>
+            <ol class="relative border-s border-gray-600">
+              {day.events.map((event) => (
+                <li class="mb-10 ms-4">
+                  <ul class="mb-2 flex items-center gap-1 text-center text-black">
+                    <div
+                      class={`absolute -start-1.5 mt-1.5 h-3 w-3 rounded-full bg-[${day.color}] [box-shadow:0_0_10px_${day.color},0_0_20px_${day.color}]`}
+                    />
+                    <li class="rounded-full bg-white px-2 py-1 font-mono text-sm font-bold">
+                      {event.time}
+                    </li>
+                    <li
+                      class={`rounded-full bg-[${day.color}] px-2 py-1 font-mono text-sm font-bold`}
+                    >
+                      {event.location}
+                    </li>
+                  </ul>
+                  <h5 class="font-bold">{event.title}</h5>
+                  <p
+                    set:html={event.description?.replace(
+                      /(?:\r\n|\r|\n)/g,
+                      "<br>"
+                    )}
+                  />
+                </li>
+              ))}
+            </ol>
+          </li>
+        ))
+      }
+    </ul>
   </Section>
 </BaseLayout>
