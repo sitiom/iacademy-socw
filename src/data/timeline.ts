@@ -2,10 +2,30 @@ import type { Timeline, TimelineDay } from "../types/timeline";
 
 // https://tailwindcss.com/docs/content-configuration#dynamic-class-names
 const _ = {
-  red: ["text-[#D34646]", "bg-[#D34646]"],
-  yellow: ["text-[#F1DD24]", "bg-[#F1DD24]"],
-  green: ["text-[#58FC68]", "bg-[#58FC68]"],
-  blue: ["text-[#43DDFF]", "bg-[#43DDFF]"],
+  red: [
+    "text-[#D34646]",
+    "bg-[#D34646]",
+    "[text-shadow:0_0_10px_#D34646,0_0_20px_#D34646]",
+    "[box-shadow:0_0_10px_#D34646,0_0_20px_#D34646]",
+  ],
+  yellow: [
+    "text-[#F1DD24]",
+    "bg-[#F1DD24]",
+    "[text-shadow:0_0_10px_#F1DD24,0_0_20px_#F1DD24]",
+    "[box-shadow:0_0_10px_#F1DD24,0_0_20px_#F1DD24]",
+  ],
+  green: [
+    "text-[#58FC68]",
+    "bg-[#58FC68]",
+    "[text-shadow:0_0_10px_#58FC68,0_0_20px_#58FC68]",
+    "[box-shadow:0_0_10px_#58FC68,0_0_20px_#58FC68]",
+  ],
+  blue: [
+    "text-[#43DDFF]",
+    "bg-[#43DDFF]",
+    "[text-shadow:0_0_10px_#43DDFF,0_0_20px_#43DDFF]",
+    "[box-shadow:0_0_10px_#43DDFF,0_0_20px_#43DDFF]",
+  ],
 };
 
 const timelineData: Timeline = [
