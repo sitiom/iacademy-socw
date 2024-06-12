@@ -25,7 +25,7 @@
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
-    "fluid-tailwind": "^0.3.9",
+    "fluid-tailwind": "^1.0.0",
     "prettier": "^3.3.2",
     "prettier-plugin-astro": "^0.14.0",
     "prettier-plugin-tailwindcss": "^0.6.3",
