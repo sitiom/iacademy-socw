@@ -36,20 +36,24 @@ const timelineData: Timeline = [
     events: [
       {
         title: "SOCW 2024: OPENING",
-        description: "Resource Talk 1\nBrain Busters\nFamily Feud",
         location: "Auditorium, 12F",
-        time: "8:00AM",
+        time: "9:00AM",
+      },
+      {
+        title: "BRAIN BUSTERS",
+        location: "Auditorium, 12F",
+        time: "11:00AM",
       },
       {
         title: "Workshop",
-        description: "Audio Design for Game Dev Students",
-        location: "Room #",
+        description: "Sound Design: Tips & Tricks",
+        location: "Auditorium, 12F",
         time: "1:00PM",
       },
       {
         title: "Workshop",
         description: "Git and GitHub",
-        location: "Room #",
+        location: "Auditorium, 12F",
         time: "2:30PM",
       },
     ],
@@ -63,12 +67,6 @@ const timelineData: Timeline = [
         title: "SCHOOL OF COMPUTING",
         description: "CAREER FAIR 2024",
         location: "Auditorium, 12F",
-        time: "9:00AM",
-      },
-      {
-        title: "AR MUSEUM",
-        description: "Opening",
-        location: "Room #",
         time: "9:00AM",
       },
     ],
@@ -105,12 +103,12 @@ const timelineData: Timeline = [
     events: [
       {
         title: "ESCAPE ROOM",
-        location: "Room #",
+        location: "UG Library, 9F",
         time: "9:00AM",
       },
       {
         title: "DESIGNATHON",
-        location: "Room #",
+        location: "Auditorium, 12F",
         time: "9:00AM",
       },
       {
@@ -127,7 +125,8 @@ const timelineData: Timeline = [
       },
       {
         title: "CODE IN THE DARK",
-        location: "Room #",
+        description: "Machine Problems",
+        location: "Auditorium, 12F",
         time: "10:30AM",
       },
       {
