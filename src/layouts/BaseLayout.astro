@@ -1,4 +1,6 @@
 ---
+import { ViewTransitions } from "astro:transitions";
+
 interface Props {
   title?: string;
   description: string;
@@ -8,6 +10,7 @@ const { title = "SOC Week '23-'24", description } = Astro.props;
 
 import "../styles/base.css";
 import AnimatedCursor from "react-animated-cursor";
+import Navbar from "../components/Navbar.astro";
 ---
 
 <html lang="en">
@@ -37,8 +40,10 @@ import AnimatedCursor from "react-animated-cursor";
     <meta name="generator" content={Astro.generator} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <title>{title}</title>
+    <ViewTransitions />
   </head>
   <body class="bg-[#020213] text-white">
+    <Navbar />
     <slot />
     <AnimatedCursor
       client:only="react"
