@@ -1,10 +1,10 @@
 ---
-import { ViewTransitions } from "astro:transitions";
+// import { ViewTransitions } from "astro:transitions";
 
 interface Props {
   title?: string;
   description: string;
-  icon: string;
+  icon: { type: string; href: string };
 }
 
 const { title = "SOC Week '23-'24", description, icon } = Astro.props;
@@ -39,12 +39,11 @@ import Navbar from "../components/Navbar.astro";
       content="https://iacademy-socw.netlify.app/images/preview.png"
     />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/x-icon" href={icon} />
+    <link rel="icon" type={icon.type} href={icon.href} />
     <title>{title}</title>
-    <ViewTransitions />
+    <!-- <ViewTransitions /> -->
   </head>
   <body class="bg-[#020213] text-white">
-    <Navbar />
     <slot />
     <AnimatedCursor
       client:only="react"

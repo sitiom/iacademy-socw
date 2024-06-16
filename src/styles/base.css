@@ -8,3 +8,7 @@
     src: url("/fonts/Akira Expanded/Akira Bold.ttf") format("truetype");
   }
 }
+
+#header.scroll {
+  @apply border-b border-gray-500/20;
+}

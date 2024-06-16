@@ -11,10 +11,14 @@ const Cell = ({ value, label }: { value: number; label: string }) => (
   </div>
 );
 
-const Countdown = () => {
-  const expiryTimestamp = new Date(2024, 5, 24, 8);
+interface Props {
+  timestamp: Date;
+}
+
+const Countdown = ({ timestamp }: Props) => {
+  // const expiryTimestamp = new Date(2024, 5, 24, 8);
   const { seconds, minutes, hours, days } = useTimer({
-    expiryTimestamp,
+    expiryTimestamp: timestamp,
   });
 
   return (
