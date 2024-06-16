@@ -4,9 +4,10 @@ import { ViewTransitions } from "astro:transitions";
 interface Props {
   title?: string;
   description: string;
+  icon: string;
 }
 
-const { title = "SOC Week '23-'24", description } = Astro.props;
+const { title = "SOC Week '23-'24", description, icon } = Astro.props;
 
 import "../styles/base.css";
 import AnimatedCursor from "react-animated-cursor";
@@ -38,7 +39,7 @@ import Navbar from "../components/Navbar.astro";
       content="https://iacademy-socw.netlify.app/images/preview.png"
     />
     <meta name="generator" content={Astro.generator} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href={icon} />
     <title>{title}</title>
     <ViewTransitions />
   </head>
