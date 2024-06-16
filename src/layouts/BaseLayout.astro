@@ -1,6 +1,8 @@
 ---
 import "../styles/base.css";
 import AnimatedCursor from "react-animated-cursor";
+import tagline from "../images/tagline.png";
+import { Image } from "astro:assets";
 
 interface Props {
   title?: string;
@@ -44,6 +46,69 @@ const imageUrl = new URL(previewImage, baseUrl);
   </head>
   <body class="bg-[#020213] text-white">
     <slot />
+    <div
+      class="mx-auto flex max-w-[96rem] flex-col border-t border-gray-500/20 px-6 py-8 font-mono md:flex-row md:items-center md:justify-between"
+    >
+      <Image
+        src={tagline}
+        alt="The Future of Computing through Game-Changing Innovations"
+        class="mb-2 w-48 md:mb-0 md:w-32"
+      />
+      <p class="mb-4 md:mb-0">
+        2024 © sitiom • COMPILE • All Rights Reserved.
+      </p>
+      <ul class="-ml-2 flex md:mb-0 rtl:-mr-2 rtl:ml-0 rtl:md:ml-0">
+        <li>
+          <a
+            href="https://www.facebook.com/iacademycompile"
+            class="text-muted inline-flex items-center rounded-lg p-2.5 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-700"
+            aria-label="Facebook"
+          >
+            <svg
+              class="h-6 w-6"
+              data-icon="tabler:brand-facebook"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              ><symbol id="ai:tabler:brand-facebook"
+                ><path
+                  d="M7 10v4h3v7h4v-7h3l1-4h-4V8a1 1 0 0 1 1-1h3V3h-3a5 5 0 0 0-5 5v2z"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"></path></symbol
+              >
+              <use xlink:href="#ai:tabler:brand-facebook"></use>
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/sitiom/iacademy-socw"
+            class="text-muted inline-flex items-center rounded-lg p-2.5 text-sm text-gray-400 hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-700"
+            aria-label="Github"
+          >
+            <svg
+              class="h-6 w-6"
+              data-icon="tabler:brand-github"
+              height="1em"
+              viewBox="0 0 24 24"
+              width="1em"
+              ><symbol id="ai:tabler:brand-github"
+                ><path
+                  d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2c2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2a4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6c-.6.6-.6 1.2-.5 2V21"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"></path></symbol
+              ><use xlink:href="#ai:tabler:brand-github"></use>
+            </svg>
+          </a>
+        </li>
+      </ul>
+    </div>
     <AnimatedCursor
       client:only="react"
       color="255,255,255"
