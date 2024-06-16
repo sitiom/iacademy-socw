@@ -1,10 +1,11 @@
 import defaultTheme from 'tailwindcss/defaultTheme'
 import fluid, { extract, screens } from 'fluid-tailwind'
+import flowbite from "flowbite-react/tailwind";
 
 /** @type {import('tailwindcss').Config} */
 export default {
   content: {
-    files: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
+    files: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}', flowbite.content()],
     extract
   },
   theme: {
@@ -16,5 +17,5 @@ export default {
       },
     },
   },
-  plugins: [fluid],
+  plugins: [fluid, flowbite.plugin()],
 }
