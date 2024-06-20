@@ -5,13 +5,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import heroLogo from "../images/hero-logo.png";
 import timelineDiagram from "../images/timeline-diagram.png";
-import aboutImg from "../images/about.jpg";
 import Countdown from "../components/Countdown";
 import timeline from "../data/timeline";
 import compileLogo from "../images/compile-logo.png";
 import iacLogo from "../images/iac_makati-logo.png";
 import Navbar from "../components/Navbar.astro";
 import { Carousel } from "flowbite-react";
+
+const partners = [
+  { name: "Facebook", logo: "/partners/facebook.svg" },
+  { name: "Disney", logo: "/partners/disney.svg" },
+  { name: "Airbnb", logo: "/partners/airbnb.svg" },
+  { name: "Apple", logo: "/partners/apple.svg" },
+  { name: "Spark", logo: "/partners/spark.svg" },
+  { name: "Samsung", logo: "/partners/samsung.svg" },
+  { name: "Quora", logo: "/partners/quora.svg" },
+  { name: "Sass", logo: "/partners/sass.svg" },
+];
 ---
 
 <BaseLayout
@@ -46,7 +56,7 @@ import { Carousel } from "flowbite-react";
       <Countdown client:only="react" timestamp={new Date(2024, 5, 24, 8)} />
     </div>
     <div
-      class="flex justify-center gap-8 px-6 py-9 text-center font-semibold md:gap-20"
+      class="flex justify-center gap-8 px-6 pt-9 text-center font-semibold md:gap-20"
     >
       <div>
         <p class="~mb-1/0">Presented by</p>
@@ -71,7 +81,42 @@ import { Carousel } from "flowbite-react";
         </a>
       </div>
     </div>
+    <div
+      class="mx-auto mb-9 mt-5 w-full max-w-5xl space-y-2 px-4 text-center font-semibold md:px-6"
+    >
+      <p class="~mb-3/2">In Partnership with</p>
+      <div
+        class="inline-flex w-full flex-nowrap overflow-hidden opacity-80 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          x-ref="logos"
+          class="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+        >
+          {
+            partners.map((partner) => (
+              <li>
+                <img src={partner.logo} alt={partner.name} />
+              </li>
+            ))
+          }
+        </ul>
+        <ul
+          x-ref="logos"
+          class="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          aria-hidden="true"
+        >
+          {
+            partners.map((partner) => (
+              <li>
+                <img src={partner.logo} alt={partner.name} />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
   </div>
+
   <Section title="About" id="about">
     <div class="flex flex-col items-center justify-center gap-6 lg:flex-row">
       <div class="w-full flex-1 lg:h-96 lg:w-1/2">
