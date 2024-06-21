@@ -1,17 +1,30 @@
 ---
 import { Image } from "astro:assets";
 import "@fontsource-variable/source-code-pro";
+import "@fontsource/iceland";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import heroLogo from "../images/hero-logo.png";
 import timelineDiagram from "../images/timeline-diagram.png";
-import aboutImg from "../images/about.jpg";
 import Countdown from "../components/Countdown";
 import timeline from "../data/timeline";
 import compileLogo from "../images/compile-logo.png";
 import iacLogo from "../images/iac_makati-logo.png";
 import Navbar from "../components/Navbar.astro";
 import { Carousel } from "flowbite-react";
+import type { ImageMetadata } from "astro";
+
+const sponsors = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/partners/sponsors/*.png"
+);
+
+const orgs = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/partners/orgs/*.png"
+);
+
+const community_partners = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/partners/community/*.png"
+);
 ---
 
 <BaseLayout
@@ -46,7 +59,7 @@ import { Carousel } from "flowbite-react";
       <Countdown client:only="react" timestamp={new Date(2024, 5, 24, 8)} />
     </div>
     <div
-      class="flex justify-center gap-8 px-6 py-9 text-center font-semibold md:gap-20"
+      class="flex justify-center gap-8 px-6 pt-9 text-center font-semibold md:gap-20"
     >
       <div>
         <p class="~mb-1/0">Presented by</p>
@@ -72,6 +85,145 @@ import { Carousel } from "flowbite-react";
       </div>
     </div>
   </div>
+  <Section
+    title="Partners & Sponsors"
+    id="partners-and-sponsors"
+    description="Thank you to our partners & sponsors!"
+  >
+    <div
+      class="mx-auto mb-9 mt-5 w-full max-w-5xl space-y-2 px-4 text-center font-['Iceland'] text-2xl md:px-6"
+    >
+      <p
+        class="mx-auto w-fit rounded-2xl border-2 border-gray-400 px-5 py-2 text-[#FF80E3] ~mb-3/2"
+      >
+        School Orgs
+      </p>
+      <div
+        class="inline-flex w-full flex-nowrap overflow-hidden opacity-80 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+        >
+          {
+            Object.entries(orgs).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+        <ul
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          aria-hidden="true"
+        >
+          {
+            Object.entries(orgs).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p
+        class="mx-auto w-fit rounded-2xl border-2 border-gray-400 px-5 py-2 text-[#D39CFF] ~mb-3/2"
+      >
+        Sponsors
+      </p>
+      <div
+        class="inline-flex w-full flex-nowrap overflow-hidden opacity-80 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          class="flex animate-infinite-scroll-reverse items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+        >
+          {
+            Object.entries(sponsors).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+        <ul
+          class="flex animate-infinite-scroll-reverse items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          aria-hidden="true"
+        >
+          {
+            Object.entries(sponsors).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p
+        class="mx-auto w-fit rounded-2xl border-2 border-gray-400 px-5 py-2 text-[#6DEDFF] ~mb-3/2"
+      >
+        Community Partners
+      </p>
+      <div
+        class="inline-flex w-full flex-nowrap overflow-hidden opacity-80 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+        >
+          {
+            Object.entries(community_partners).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+        <ul
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          aria-hidden="true"
+        >
+          {
+            Object.entries(community_partners).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </div>
+  </Section>
+
   <Section title="About" id="about">
     <div class="flex flex-col items-center justify-center gap-6 lg:flex-row">
       <div class="w-full flex-1 lg:h-96 lg:w-1/2">
