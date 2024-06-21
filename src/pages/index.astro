@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import "@fontsource-variable/source-code-pro";
+import "@fontsource/iceland";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Section from "../components/Section.astro";
 import heroLogo from "../images/hero-logo.png";
@@ -11,17 +12,19 @@ import compileLogo from "../images/compile-logo.png";
 import iacLogo from "../images/iac_makati-logo.png";
 import Navbar from "../components/Navbar.astro";
 import { Carousel } from "flowbite-react";
+import type { ImageMetadata } from "astro";
 
-const partners = [
-  { name: "Facebook", logo: "/partners/facebook.svg" },
-  { name: "Disney", logo: "/partners/disney.svg" },
-  { name: "Airbnb", logo: "/partners/airbnb.svg" },
-  { name: "Apple", logo: "/partners/apple.svg" },
-  { name: "Spark", logo: "/partners/spark.svg" },
-  { name: "Samsung", logo: "/partners/samsung.svg" },
-  { name: "Quora", logo: "/partners/quora.svg" },
-  { name: "Sass", logo: "/partners/sass.svg" },
-];
+const sponsors = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/partners/sponsors/*.png"
+);
+
+const orgs = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/partners/orgs/*.png"
+);
+
+const community_partners = import.meta.glob<{ default: ImageMetadata }>(
+  "/src/images/partners/community/*.png"
+);
 ---
 
 <BaseLayout
@@ -81,41 +84,145 @@ const partners = [
         </a>
       </div>
     </div>
+  </div>
+  <Section
+    title="Partners & Sponsors"
+    id="partners-and-sponsors"
+    description="Thank you to our partners & sponsors!"
+  >
     <div
-      class="mx-auto mb-9 mt-5 w-full max-w-5xl space-y-2 px-4 text-center font-semibold md:px-6"
+      class="mx-auto mb-9 mt-5 w-full max-w-5xl space-y-2 px-4 text-center font-['Iceland'] text-2xl md:px-6"
     >
-      <p class="~mb-3/2">In Partnership with</p>
+      <p
+        class="mx-auto w-fit rounded-2xl border-2 border-gray-400 px-5 py-2 text-[#FF80E3] ~mb-3/2"
+      >
+        School Orgs
+      </p>
       <div
         class="inline-flex w-full flex-nowrap overflow-hidden opacity-80 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
       >
         <ul
-          x-ref="logos"
-          class="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
         >
           {
-            partners.map((partner) => (
+            Object.entries(orgs).map(([path, image]) => (
               <li>
-                <img src={partner.logo} alt={partner.name} />
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
               </li>
             ))
           }
         </ul>
         <ul
-          x-ref="logos"
-          class="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
           aria-hidden="true"
         >
           {
-            partners.map((partner) => (
+            Object.entries(orgs).map(([path, image]) => (
               <li>
-                <img src={partner.logo} alt={partner.name} />
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p
+        class="mx-auto w-fit rounded-2xl border-2 border-gray-400 px-5 py-2 text-[#D39CFF] ~mb-3/2"
+      >
+        Sponsors
+      </p>
+      <div
+        class="inline-flex w-full flex-nowrap overflow-hidden opacity-80 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          class="flex animate-infinite-scroll-reverse items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+        >
+          {
+            Object.entries(sponsors).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+        <ul
+          class="flex animate-infinite-scroll-reverse items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          aria-hidden="true"
+        >
+          {
+            Object.entries(sponsors).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+
+      <p
+        class="mx-auto w-fit rounded-2xl border-2 border-gray-400 px-5 py-2 text-[#6DEDFF] ~mb-3/2"
+      >
+        Community Partners
+      </p>
+      <div
+        class="inline-flex w-full flex-nowrap overflow-hidden opacity-80 [mask-image:_linear-gradient(to_right,transparent_0,_black_128px,_black_calc(100%-128px),transparent_100%)]"
+      >
+        <ul
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+        >
+          {
+            Object.entries(community_partners).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
+              </li>
+            ))
+          }
+        </ul>
+        <ul
+          class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+          aria-hidden="true"
+        >
+          {
+            Object.entries(community_partners).map(([path, image]) => (
+              <li>
+                <Image
+                  src={image()}
+                  alt={path}
+                  width={150}
+                  class="pointer-events-none"
+                />
               </li>
             ))
           }
         </ul>
       </div>
     </div>
-  </div>
+  </Section>
 
   <Section title="About" id="about">
     <div class="flex flex-col items-center justify-center gap-6 lg:flex-row">
