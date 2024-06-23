@@ -9,9 +9,7 @@ import Countdown from "../components/Countdown";
 import compileLogo from "../images/compile-logo.png";
 import iacLogo from "../images/iac_makati-logo.png";
 import Navbar from "../components/Navbar.astro";
-import timelineFull from "../images/expo-timeline/full.png";
-import timelineDay1 from "../images/expo-timeline/day1.png";
-import timelineDay2 from "../images/expo-timeline/day2.png";
+import timeline from "../images/expo-timeline.png";
 ---
 
 <BaseLayout
@@ -75,19 +73,9 @@ import timelineDay2 from "../images/expo-timeline/day2.png";
   </div>
   <Section title="Timeline" id="timeline">
     <Image
-      src={timelineFull}
+      src={timeline}
       alt="Full timeline"
-      class="pointer-events-none mx-auto hidden md:block"
-    />
-    <Image
-      src={timelineDay1}
-      alt="Day 1"
-      class="pointer-events-none mx-auto mb-10 md:hidden"
-    />
-    <Image
-      src={timelineDay2}
-      alt="Day 2"
-      class="pointer-events-none mx-auto md:hidden"
+      class="pointer-events-none mx-auto"
     />
   </Section>
   <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"
