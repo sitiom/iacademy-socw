@@ -37,7 +37,10 @@ import Navbar from "../components/Navbar.astro";
     </section>
     <div class="my-4">
       <p class="mb-3 text-center font-mono ~text-lg/2xl">June 28-29, 2024</p>
-      <Countdown client:only="react" timestamp={new Date(2024, 5, 28, 8)} />
+      <Countdown
+        client:only="react"
+        timestamp={new Date("2024-06-28T00:00:00.000Z")}
+      />
     </div>
     <div
       class="flex justify-center gap-8 px-6 py-9 text-center font-semibold md:gap-20"

@@ -56,7 +56,10 @@ const community_partners = import.meta.glob<{ default: ImageMetadata }>(
     </section>
     <div class="my-4">
       <p class="mb-3 text-center font-mono ~text-lg/2xl">June 24-29, 2024</p>
-      <Countdown client:only="react" timestamp={new Date(2024, 5, 24, 8)} />
+      <Countdown
+        client:only="react"
+        timestamp={new Date("2024-06-24T01:00:00.000Z")}
+      />
     </div>
     <div
       class="flex justify-center gap-8 px-6 pt-9 text-center font-semibold md:gap-20"
