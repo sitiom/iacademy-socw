@@ -2,12 +2,16 @@
 import { Image } from "astro:assets";
 import "@fontsource/iceland";
 import "@fontsource-variable/source-code-pro";
+import Section from "../components/Section.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import hero from "../images/expo-hero.png";
 import Countdown from "../components/Countdown";
 import compileLogo from "../images/compile-logo.png";
 import iacLogo from "../images/iac_makati-logo.png";
 import Navbar from "../components/Navbar.astro";
+import timelineFull from "../images/expo-timeline/full.png";
+import timelineDay1 from "../images/expo-timeline/day1.png";
+import timelineDay2 from "../images/expo-timeline/day2.png";
 ---
 
 <BaseLayout
@@ -68,8 +72,24 @@ import Navbar from "../components/Navbar.astro";
         </a>
       </div>
     </div>
-
-    <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"
-    ></script>
   </div>
+  <Section title="Timeline" id="timeline">
+    <Image
+      src={timelineFull}
+      alt="Full timeline"
+      class="pointer-events-none mx-auto hidden md:block"
+    />
+    <Image
+      src={timelineDay1}
+      alt="Day 1"
+      class="pointer-events-none mx-auto mb-10 md:hidden"
+    />
+    <Image
+      src={timelineDay2}
+      alt="Day 2"
+      class="pointer-events-none mx-auto md:hidden"
+    />
+  </Section>
+  <script id="luma-checkout" src="https://embed.lu.ma/checkout-button.js"
+  ></script>
 </BaseLayout>
